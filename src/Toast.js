@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Dimensions, Keyboard, View, Animated, Text } from 'react-native';
+import { Dimensions, Keyboard, View, Animated, Text, ViewPropTypes } from 'react-native';
 
 import styles from './Toast.styles';
 
@@ -136,13 +136,13 @@ Toast.defaultProps = {
 };
 
 Toast.propTypes = {
-  containerStyle: View.propTypes.style,
+  containerStyle: ViewPropTypes || View.propTypes.style,
   message: PropTypes.string,
   messageStyle: Text.propTypes.style, // eslint-disable-line react/no-unused-prop-types
   error: PropTypes.bool,
-  errorStyle: View.propTypes.style,
+  errorStyle: ViewPropTypes || View.propTypes.style,
   warning: PropTypes.bool,
-  warningStyle: View.propTypes.style,
+  warningStyle: ViewPropTypes || View.propTypes.style,
   duration: PropTypes.number,
   getMessageComponent: PropTypes.func,
   position: PropTypes.number
